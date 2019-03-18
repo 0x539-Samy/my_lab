@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "eu-west-3"
+  region = "${var.aws_region}"
 }
 
 data "aws_ami" "ubuntu" {
@@ -18,9 +18,9 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-resource "aws_instance" "my_lab" {
+resource "aws_instance" "${var.aws_instance_name}" {
   ami           = "${data.aws_ami.ubuntu.id}"
-  instance_type = "t2.micro"
+  instance_type = "${var.instance_type}"
 
   tags = {
     Name = "lab"
