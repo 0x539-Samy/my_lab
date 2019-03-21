@@ -18,11 +18,11 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-resource "aws_instance" "${var.aws_instance_name}" {
+resource "aws_instance" "web" {
   ami           = "${data.aws_ami.ubuntu.id}"
-  instance_type = "${var.instance_type}"
+  instance_type = "${var.aws_instance_type}"
 
   tags = {
-    Name = "lab"
+    Name = "${var.aws_instance_tags}"
   }
 }
