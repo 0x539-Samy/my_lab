@@ -3,9 +3,14 @@ variable "aws_region" {
 }
 
 variable "aws_instance_type" {
-    description = "Instance type"
+    description = "AWS instance type (flavor)"
 }
 
 variable "aws_instance_tags" {
-    description = "instance tag"
+    description = "AWS instance tag (name)"
+}
+
+
+variable "aws_key_pair_name" {
+    description = "AWS ssh keypair name"
 }
