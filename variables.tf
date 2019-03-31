@@ -14,3 +14,8 @@ variable "aws_instance_tags" {
 variable "aws_key_pair_name" {
     description = "AWS ssh keypair name"
 }
+
+variable "aws_security_groups" {
+    type = "list"
+    description = "AWS security groups name"
+}
